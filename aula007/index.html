@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sistema de Multas</h1>
+    <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+
+    <div id="res">Resultado: </div>
+    <div id="status">Status de Multa: </div>
+
+    <script>
+        function calcular() {
+            var vel = Number.parseFloat(window.document.getElementById('txtvel').value);
+            var res = document.querySelector('div#res');
+            var status = document.querySelector('div#status');
+
+            res.innerHTML = `Sua velocidade é de: ${vel}`;
+
+            if (vel > 70) {
+                status.innerHTML = "MULTADO."
+            }else{
+                status.innerHTML = "NÃO HÁ MULTA"
+            }
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
